@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flomodoro</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1 id="app-title">Flomodoro</h1>
+        </header>
+
+        <main>
+            <div class="timer-display" id="timer-display">00:00:00</div>
+            <div class="status-label" id="status-label">Ready to Flow</div>
+
+            <div class="controls">
+                <button id="mode-btn" class="btn-icon secondary" aria-label="Switch to Pomodoro" title="Switch Mode">
+                    <svg id="infinity-icon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path
+                            d="M12 12c-2-2.67-4-4-6-4a4 4 0 1 0 0 8c2 0 4-1.33 6-4Zm0 0c2 2.67 4 4 6 4a4 0 1 0 0-8c-2 0-4 1.33-6 4Z" />
+                    </svg>
+                    <img id="tomato-icon" src="static/tomato.svg" alt="Pomodoro" width="24" height="24">
+                </button>
+
+                <button id="toggle-btn" class="btn-icon primary" aria-label="Start Flow" title="Start/Pause">
+                    <svg id="play-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    </svg>
+                    <svg id="pause-icon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="6" y="4" width="4" height="16"></rect>
+                        <rect x="14" y="4" width="4" height="16"></rect>
+                    </svg>
+                </button>
+
+                <button id="switch-btn" class="btn-icon secondary" disabled aria-label="Switch to Break"
+                    title="Switch Work/Break">
+                    <svg id="coffee-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M18 8h1a4 4 0 0 1 0 8h-1" />
+                        <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" />
+                        <line x1="6" y1="1" x2="6" y2="4" />
+                        <line x1="10" y1="1" x2="10" y2="4" />
+                        <line x1="14" y1="1" x2="14" y2="4" />
+                    </svg>
+                    <svg id="briefcase-icon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="label">Total Work</span>
+                    <span class="value" id="total-work">00:00:00</span>
+                </div>
+                <div class="stat-item">
+                    <span class="label">Banked Break</span>
+                    <span class="value" id="banked-break">00:00:00</span>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="static/script.js"></script>
+</body>
+
+</html>
