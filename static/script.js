@@ -24,6 +24,7 @@ let totalWorkSeconds = 0;
 let bankedBreakSeconds = 0;
 let currentSessionSeconds = 0;
 let pomodoroSeconds = 25 * 60;
+let lastTickTime = 0;
 
 // Audio Context for sound
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -119,14 +120,18 @@ function updateIcons() {
 }
 
 function tick() {
+    const now = Date.now();
+    const delta = (now - lastTickTime) / 1000;
+    lastTickTime = now;
+
     if (mode === 'flomodoro') {
         if (isWorking) {
-            currentSessionSeconds++;
-            totalWorkSeconds++;
-            bankedBreakSeconds += 0.2;
+            currentSessionSeconds += delta;
+            totalWorkSeconds += delta;
+            bankedBreakSeconds += delta / 5;
         } else {
             if (bankedBreakSeconds > 0) {
-                bankedBreakSeconds -= 1;
+                bankedBreakSeconds -= delta;
                 if (bankedBreakSeconds < 0) bankedBreakSeconds = 0;
             } else {
                 pauseTimer();
@@ -137,9 +142,9 @@ function tick() {
         }
     } else { // Pomodoro
         if (pomodoroSeconds > 0) {
-            pomodoroSeconds--;
+            pomodoroSeconds -= delta;
             if (isWorking) {
-                totalWorkSeconds++;
+                totalWorkSeconds += delta;
             }
         } else {
             pauseTimer();
@@ -176,6 +181,7 @@ function startTimer() {
     }
 
     isRunning = true;
+    lastTickTime = Date.now();
     timerInterval = setInterval(tick, 1000);
 
     switchBtn.disabled = false;
