@@ -86,11 +86,32 @@
             <div class="stats">
                 <div class="stat-item">
                     <span class="label">Total Work</span>
-                    <span class="value" id="total-work">00:00:00</span>
+                    <div class="value-wrapper">
+                        <span class="value" id="total-work">00:00:00</span>
+                        <button id="edit-work-btn" class="mini-btn" aria-label="Edit Total Work" title="Edit Time">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
                 <div class="stat-item">
                     <span class="label">Banked Break</span>
-                    <span class="value" id="banked-break">00:00:00</span>
+                    <div class="value-wrapper">
+                        <span class="value" id="banked-break">00:00:00</span>
+                        <button id="reset-break-btn" class="mini-btn" aria-label="Reset Banked Break"
+                            title="Reset Break">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M23 4v6h-6"></path>
+                                <path d="M1 20v-6h6"></path>
+                                <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </div>
         </main>

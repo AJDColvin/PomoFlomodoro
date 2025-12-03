@@ -130,7 +130,7 @@ header h1 {
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 .btn:disabled {
@@ -184,4 +184,83 @@ body.break-mode {
 
 .stats.pomodoro-mode {
     justify-content: center;
+}
+
+/* User Controls */
+.value-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.mini-btn {
+    background: none;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+    color: var(--secondary-color);
+    opacity: 0.6;
+    transition: opacity 0.2s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 8px;
+}
+
+.mini-btn:hover {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.05);
+    /* transform: scale(1.1); */
+}
+
+.mini-btn svg {
+    width: 14px;
+    height: 14px;
+}
+
+/* Inline Editing */
+.edit-container {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.time-input {
+    width: 2.5rem;
+    padding: 2px;
+    font-size: 1.2rem;
+    text-align: center;
+    border: 1px solid var(--secondary-color);
+    border-radius: 4px;
+    background-color: transparent;
+    color: var(--text-color);
+    font-family: inherit;
+}
+
+.time-input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.2);
+}
+
+.edit-separator {
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.save-btn {
+    margin-left: 4px;
+    color: var(--accent-color);
+}
+
+.save-btn:hover {
+    color: var(--primary-color);
 }
